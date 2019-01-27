@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 #divad/david22
 
 class Student(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)#si eliminem al user, s'elimina el estudiant
     #name = models.CharField(max_length=500, blank=True)
     #surname = models.CharField(max_length=500, blank=True)
     #dni = models.CharField(max_length=9, blank=True)

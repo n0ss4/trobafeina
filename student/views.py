@@ -3,9 +3,10 @@ from .forms import FormStudent
 from django.contrib.auth.models import User
 
 from .models import Student
-def index1(request):
+def formulari_student(request):
     form=FormStudent(request.POST or None)
     if form.is_valid():
+        print(form.cleaned_data)
         form_data = form.cleaned_data
         nom=form_data.get("nom_usuari")
         contra = form_data.get("contrasenya")
@@ -21,6 +22,10 @@ def index1(request):
         obj1 = Student.objects.create(user=obj,experiencia=a1,estudis=a2,idiomes=a3,coneixements=a4,carnet_de_conduir=a5,situacio_laboral=a6)
         obj1.save()
     context={
-        "el_form1":form,
+        "el_form_formulari_student":form,
     }
+
     return render(request, 'student/student_form.html',context)
+
+def pagina(request):
+    return render(request,'student/index_student.html')
