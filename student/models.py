@@ -1,9 +1,15 @@
 from django.db import models
 from django.contrib.auth.models import User
-
+#divad/david22
 
 class Student(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    name = models.CharField(max_length=500, blank=True)
-    surname = models.CharField(max_length=500, blank=True)
-    dni = models.CharField(max_length=9, blank=True)
+    #name = models.CharField(max_length=500, blank=True)
+    #surname = models.CharField(max_length=500, blank=True)
+    #dni = models.CharField(max_length=9, blank=True)
+    experiencia = models.CharField(max_length=40000,blank=False,default='')
+    estudis = models.CharField(max_length=400,blank=True,default='')
+    idiomes = models.CharField(max_length=400,blank=True,default='')#!!!!!!!!
+    coneixements = models.CharField(max_length=400,blank=True,default='')
+    carnet_de_conduir=models.CharField(max_length=400,blank=True,default='')#BooleandField
+    situacio_laboral=models.CharField(max_length=400,blank=True,default='')

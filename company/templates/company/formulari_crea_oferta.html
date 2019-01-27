@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Hola</h1>
+<form method="post" action="">
+    {% csrf_token %}<!--Contra la falsificacion de peticions-->
+{{ el_form.as_p }}
+<input type="submit" value="Registrame">
+</form>-->
+</body>
+</html>
