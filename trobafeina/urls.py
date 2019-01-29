@@ -25,6 +25,11 @@ from django.urls import path,include
 urlpatterns = [
     path('', include('JobOffer.urls')),
     path('admin/', admin.site.urls),
+<<<<<<< HEAD
     url(r'^accounts/', include('django.contrib.auth.urls')),
     path('', views.index)
+=======
+    path('accounts/', include('django.contrib.auth.urls'))
+
+>>>>>>> david
 ]

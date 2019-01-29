@@ -126,6 +126,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+<<<<<<< HEAD
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
@@ -137,4 +138,7 @@ SOUTH_MIGRATION_MODULES = {
 'django_simple_cookie_consent': 'django_simple_cookie_consent.south_migrations.0001_initial.py',
 }
 
+=======
+#LOGIN_REDIRECT_URL='/'
+>>>>>>> david
 #AUTH_USER_MODEL = 'student.Student'

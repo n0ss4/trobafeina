@@ -4,6 +4,7 @@ app_name = 'joboffer'
 urlpatterns = [
     path('', views.index, name='index'),
     path('registre_estudiant/', include('student.urls')),
-    path('registre_empresa/', include('company.urls'))
+    path('registre_empresa/', include('company.urls')),
+    path('formularis/', views.formularis, name='formularis'),
 
 ]

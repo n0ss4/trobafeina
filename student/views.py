@@ -27,3 +27,5 @@ def formulari_student(request):
 
     return render(request, 'student/student_form.html',context)
 
+def index_student(request):
+    return render(request, 'student/index_student.html')
