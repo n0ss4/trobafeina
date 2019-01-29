@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'student',
-    'company'
+    'company',
+    'django_simple_cookie_consent'
 ]
 
 MIDDLEWARE = [
@@ -127,5 +128,9 @@ STATICFILES_DIRS = [
 ]
 
 LOGIN_REDIRECT_URL = '/'
+
+SOUTH_MIGRATION_MODULES = {
+'django_simple_cookie_consent': 'django_simple_cookie_consent.south_migrations.0001_initial.py',
+}
 
 #AUTH_USER_MODEL = 'student.Student'

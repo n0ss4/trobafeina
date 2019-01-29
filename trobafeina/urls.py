@@ -21,5 +21,5 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^accounts/', include('django.contrib.auth.urls')),
-    path('', views.index),
+    path('', views.index)
 ]
