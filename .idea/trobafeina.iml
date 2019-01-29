@@ -16,7 +16,11 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
+<<<<<<< HEAD
     <orderEntry type="jdk" jdkName="python" jdkType="Python SDK" />
+=======
+    <orderEntry type="jdk" jdkName="putas_y_barcos" jdkType="Python SDK" />
+>>>>>>> david
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TemplatesService">

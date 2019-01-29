@@ -39,7 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'student',
     'company',
+<<<<<<< HEAD
     'django_simple_cookie_consent'
+=======
+    'JobOffer'
+>>>>>>> david
 ]
 
 MIDDLEWARE = [
