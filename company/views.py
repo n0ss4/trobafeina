@@ -8,6 +8,7 @@ def formulari(request):
     form=FormCompany(request.POST or None)
     if form.is_valid():
         form_data = form.cleaned_data
+        print(form_data)
         nom=form_data.get("nom_usuari")
         contra = form_data.get("contrasenya")
         a1=form_data.get("cif")
@@ -26,5 +27,3 @@ def formulari(request):
 
     return render(request, 'company/company_form.html',context)
 
-def klk(request):
-    return render(request, 'company/empresa.html')
