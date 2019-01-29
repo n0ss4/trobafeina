@@ -6,5 +6,5 @@ urlpatterns = [
     path('registre_estudiant/', include('student.urls')),
     path('registre_empresa/', include('company.urls')),
     path('formularis/', views.formularis, name='formularis'),
-    path('registre_empresa/', include('company.urls'))
+    #path('entrada/', views.entrada,)
 ]

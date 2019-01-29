@@ -18,7 +18,7 @@
     <p>Please login to see this page.</p>
     {% endif %}
 {% endif %}
-<form method="post" action="{% url 'joboffer:estudiant:index_student' %}">
+<form method="post" action="#">
 {% csrf_token %}
 <div>
     <td>{{ form.username.label_tag }}</td>
