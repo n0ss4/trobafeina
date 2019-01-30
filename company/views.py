@@ -3,6 +3,9 @@ from .models import Company
 from .forms import FormCompany
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
+from django.contrib.auth import logout
+
+
 
 
 def formulari(request):
@@ -35,4 +38,6 @@ def formulari(request):
 
 def index_empresa(request):
     return render(request, 'company/index_company.html')
+
+
 

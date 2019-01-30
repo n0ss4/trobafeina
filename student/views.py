@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .forms import FormStudent
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
+
 
 from .models import Student
 def formulari_student(request):
@@ -22,6 +24,8 @@ def formulari_student(request):
             obj.save()
             obj1 = Student.objects.create(user=obj,experiencia=a1,estudis=a2,idiomes=a3,coneixements=a4,carnet_de_conduir=a5,situacio_laboral=a6)
             obj1.save()
+            user1 = authenticate(username=nom, password=contra)
+            login(request, user1)
             return render(request, 'student/index_student.html')
     context={
         "el_form_formulari_student":form,
