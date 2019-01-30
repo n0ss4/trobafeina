@@ -35,3 +35,4 @@ def formulari(request):
 
 def index_empresa(request):
     return render(request, 'company/index_company.html')
+

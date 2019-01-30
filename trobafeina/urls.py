@@ -22,5 +22,7 @@ from django.urls import path,include
 urlpatterns = [
     path('', include('JobOffer.urls'), name='ofertes'),
     path('admin/', admin.site.urls),
-    path('accounts/', include('django.contrib.auth.urls'))
+    path('accounts/', include('django.contrib.auth.urls')),
+    #path('logout/', views.salir, name='salir'),
+
 ]
