@@ -26,6 +26,7 @@ def crearoferta(request):
 
 def index(request):
     if request.user.is_authenticated:#si el usuari esta autentificat
+        print('autentificat')
         nom_autentifiat=str(request.user.get_username())#agafem el user del usuari autentificat i el passem a string
         totes_les_empreses=Company.objects.all()#agafem totes les empreses
         variable=False

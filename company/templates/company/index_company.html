@@ -7,5 +7,8 @@
 <body>
 <h1>Hola empresa</h1>
     {{user.get_username }}
+<a href="{% url 'logout' %}?next={{ request.path }}"> Logout</a>
+
+
 </body>
 </html>
