@@ -13,7 +13,7 @@ class Student(models.Model):
     coneixements = models.CharField(max_length=400,blank=True,default='')
     carnet_de_conduir=models.CharField(max_length=400,blank=True,default='')
     situacio_laboral=models.CharField(max_length=400,blank=True,default='')
+    #esempresaa=models.BooleanField(default=False)
 
-    """def __str__(self):
-        return self.user_id"""
+
 

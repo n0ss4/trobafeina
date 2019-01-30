@@ -20,9 +20,7 @@ from . import views
 from django.urls import path,include
 
 urlpatterns = [
-    path('ofertes/', include('JobOffer.urls'), name='ofertes'),
+    path('', include('JobOffer.urls'), name='ofertes'),
     path('admin/', admin.site.urls),
-    url(r'^accounts/', include('django.contrib.auth.urls')),
-    path('', views.index),
     path('accounts/', include('django.contrib.auth.urls'))
 ]

@@ -8,6 +8,9 @@ class Company(models.Model):
     descripcio = models.TextField(max_length=500, blank=False,verbose_name="Descripció")
     nomResponsable = models.CharField(max_length=500, blank=False, verbose_name="Nom del responsable")
     cognomResponsable = models.CharField(max_length=500, blank=False, verbose_name="Cognom del responsable")
+    esempresaa=models.BooleanField(default=True)
+    esempresaa11=models.BooleanField(default=True)
 
     def __str__(self):
-        return self.cif
+        return self.user.get_username()
+
