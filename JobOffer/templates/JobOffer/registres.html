@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Registre</h1>
-    <li><a href="{% url 'joboffer:estudiant:registre' %}">Formulari student</a></li>
-    <li><a href="{% url 'joboffer:empresa:registre' %}">Formulari company</a></li>
+    <h1 style="font-family: Segoe UI Light;">Registre</h1>
+    <div class="col-12 row text-center mt-5" style="width: 100%;">
+
+
+    <div class="col-5 p-4" style="border: 1px solid black;"><a href="{% url 'joboffer:estudiant:registre' %}">ESTUDIANT</a></div>
+    <div class="col-5 p-4 offset-2" style="border: 1px solid black;"><a href="{% url 'joboffer:empresa:registre' %}">EMPRESA</a></div>
+    </div>
 {% endblock %}
