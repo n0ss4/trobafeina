@@ -1,10 +1,25 @@
 {% extends 'base.html' %}
+{% block title %}Registre{% endblock %}
 {% block content %}
+
+    <style>
+    a{
+        width: 100%;
+    }
+    a div:hover{
+        opacity: 0.5;
+    }
+    </style>
+
     <h1 style="font-family: Segoe UI Light;">Registre</h1>
-    <div class="col-12 row text-center mt-5" style="width: 100%;">
-
-
-    <div class="col-5 p-4" style="border: 1px solid black;"><a href="{% url 'joboffer:estudiant:registre' %}">ESTUDIANT</a></div>
-    <div class="col-5 p-4 offset-2" style="border: 1px solid black;"><a href="{% url 'joboffer:empresa:registre' %}">EMPRESA</a></div>
+    <div class="col-12 row align-middle mt-5" style="width: 100%;">
+        <a class="col-5" href="{% url 'joboffer:estudiant:registre' %}">
+            {% load static %}
+            <div class=" p-4" style="border: 1px solid black; width: 100%; height: 250px; background-image: url('{% static 'img/register/estudiant.jpg' %}'); color: white; font-family: 'Segoe UI Black'">ESTUDIANT</div>
+        </a>
+        <a class="col-5 offset-2" href="{% url 'joboffer:empresa:registre' %}">
+            <div class="p-4 " style="border: 1px solid black; width: 100%; height: 250px; background-image: url('{% static 'img/register/empresa.jpeg' %}'); color: black; font-family: 'Segoe UI Black'">EMPRESA</div>
+        </a>
     </div>
+
 {% endblock %}
