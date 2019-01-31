@@ -39,6 +39,8 @@ def formulari(request):
 
 def index_empresa(request):
     print("----------")
+    tots=User.objects.all()
+    print(tots)
     return render(request, 'company/index_company.html')
 
 
