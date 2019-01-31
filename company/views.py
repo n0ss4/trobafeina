@@ -1,14 +1,15 @@
 from django.shortcuts import render
 from .models import Company
 from .forms import FormCompany
+from django.urls import reverse
+
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
-
-
-
+from django.http import HttpResponse,HttpResponseRedirect
 
 def formulari(request):
+    print("-------------------------------------------------")
     form=FormCompany(request.POST or None)
     if request.method == 'POST':
         if form.is_valid():
@@ -28,16 +29,18 @@ def formulari(request):
             obj1.save()
             user1=authenticate(username=nom, password=contra)
             login(request,user1)
-            return render(request, 'company/index_company.html')
+            return HttpResponseRedirect(reverse('home:empresa:index_empresa',))
+            #return render(request, 'company/index_company.html')
     context={
         "el_form_registre_nova_empresa":form,
     }
 
     return render(request, 'company/company_form.html',context)
 
-
 def index_empresa(request):
+    print("----------")
     return render(request, 'company/index_company.html')
+
 
 
 

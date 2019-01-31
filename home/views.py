@@ -1,7 +1,10 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from .forms import PubJobOffer
 from .models import Joboffer,Company
 from django.contrib.auth.models import User
+from django.urls import reverse
+
 
 
 def crearoferta(request):
@@ -35,8 +38,11 @@ def index(request):
             if k == nom_autentifiat:#si el usuari autentificat es de una empresa la variable sera true
                 variable=True
         if variable:
-            return render(request, 'company/index_company.html')#si es empresa anira al login de empres
-        return render(request, 'student/index_student.html')#al contrari anira al login
+            return HttpResponseRedirect(reverse('home:empresa:index_empresa',))
+            #return render(request, 'company/index_company.html')#si es empresa anira al login de empres
+        return HttpResponseRedirect(reverse('home:estudiant:index_student', ))
+
+        #return render(request, 'student/index_student.html')#al contrari anira al login
     else:
         print('user no autentificat')
         return render(request, 'JobOffer/index.html')
