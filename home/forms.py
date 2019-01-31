@@ -8,4 +8,5 @@ class PubJobOffer(ModelForm):
         widgets = {
             'nom': forms.TextInput(attrs={'placeholder':'nom'}),
             'requirements': forms.Textarea(attrs={'placeholder': 'nom'}),
+
         }

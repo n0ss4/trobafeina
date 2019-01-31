@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Troba feina</title>
+    <title>Troba feina | {% block title %}{% endblock %}</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/sticky-footer.css' %}">
     {% load static %}
@@ -11,22 +11,19 @@
 <body>
 <style>
     body > .container{
-        padding-top: 60px;
-    }
-    nav{
-        width: 80%;
+        padding-top: 100px;
     }
 </style>
 <header>
 <!-- Fixed navbar -->
       <nav class="navbar navbar-expand-md navbar-dark fixed-top mx-auto" style="background-color: #002642">
-        <a class="navbar-brand" href="#">TROBA FEINA</a>
+        <a class="navbar-brand" href="{% url 'joboffer:index' %}">TROBA FEINA</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto">
-            <!--<li class="nav-item active">
+          <!--<ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
@@ -34,21 +31,20 @@
             </li>
             <li class="nav-item">
               <a class="nav-link disabled" href="#">Disabled</a>
-            </li>-->
+            </li>
           </ul>
           <form class="form-inline mt-2 mt-md-0">
             <a class="btn btn-outline-light my-2 my-sm-0" href="{% url 'login' %}">Accedir</a>
               <a class="btn btn-outline-light my-2 my-sm-0" href="{% url 'joboffer:formularis' %}">Registrar-se</a>
-          </form>
+          </form>-->
         </div>
       </nav>
     </header>
 
     <!-- Begin page content -->
     <main role="main" class="container">
-      <h1 class="mt-5">La nova app per trobar feina.</h1>
-        <p class="lead">Una nova aplicació creada per nosaltres els <code>estudiants</code>,<br>
-         perquè nosaltres també tenim dret a <code>treballar</code>.</p>
+        {% block content %}
+        {% endblock %}
     </main>
 
     <footer class="footer">
