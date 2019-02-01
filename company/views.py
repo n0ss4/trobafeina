@@ -41,16 +41,18 @@ def formulari(request):
 
 
 def index_empresa(request):
-    toteslesempreses= Oferta.objects.all().filter(nomempresadelaoferta='empresa')
+    nom_autentifiat = str(request.user.get_username())
 
+    toteslesempreses= Oferta.objects.all().filter(nomempresadelaoferta=nom_autentifiat)
+    print(toteslesempreses)
     print(type(toteslesempreses))
     print(toteslesempreses)
-    for x in toteslesempreses:
+    """for x in toteslesempreses:
         print(x)
     context = {
         "toteslesempreses": toteslesempreses,
-    }
-    return render(request, 'company/index_company.html',context)
+    }"""
+    return render(request, 'company/index_company.html')
 
 
 
