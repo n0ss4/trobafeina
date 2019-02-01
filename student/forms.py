@@ -6,7 +6,10 @@ from .models import Student
 
 class FormStudent(ModelForm):
     nom_usuari = forms.CharField()
-    contrasenya = forms.CharField()
+    contrasenya = forms.CharField(widget=forms.PasswordInput)
+    widgets = {
+        'password': forms.PasswordInput()
+    }
 
     class Meta:
         model = Student

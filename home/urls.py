@@ -1,10 +1,10 @@
-from django.urls import path,include
+from django.conf.urls import url,include
 from . import views
 app_name = 'home'
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('triarformulari/registre_estudiant/', include('student.urls')),
-    path('triarformulari/registre_empresa/', include('company.urls')),
-    path('triarformulari/', views.formularis, name='formularis'),
+    url(r'^$', views.index, name='index'),
+    url(r'^triarformulari/registre_estudiant/', include('student.urls')),
+    url(r'^triarformulari/registre_empresa/', include('company.urls')),
+    url(r'^triarformulari/', views.formularis, name='formularis'),
     #path('entrada/', views.entrada,)
 ]

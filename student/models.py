@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -15,7 +17,7 @@ class Student(models.Model):
     situacio_laboral=models.CharField(max_length=400,blank=True,default='')
     #esempresaa=models.BooleanField(default=False)
 
-    def __str__(self):
-        return self.user.get_username()
+    #def __str__(self):
+    #    return self.user.get_username()
 
 

@@ -1,9 +1,23 @@
 {% extends 'base.html' %}
-{% block title %}Registre empresa{% endblock %}
+{% block title %}Registre estudiant{% endblock %}
 {% block content %}
-<form method="post" action="">
-    {% csrf_token %}
-{{ el_form_formulari_student.as_p }}
-<input type="submit" value="Registrame">
-</form>
+    <style>
+        label{
+            min-width: 150px;
+        }
+    </style>
+    <div class="col-12 row">
+        <div class="col-6 pl-5">
+            <form method="post" action="">
+                {% csrf_token %}
+            {{ el_form_formulari_student.as_p }}
+                <button class="btn btn-outline-dark">Registrame</button>
+            </form>
+        </div>
+        <div class="col-6">
+            {% load static %}
+            <img src="{% static 'img/register/formularis/estudiant.jpeg' %}">
+        </div>
+    </div>
+
 {% endblock %}
