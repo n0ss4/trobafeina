@@ -42,6 +42,7 @@ def formulari(request):
 
 def index_empresa(request):
     toteslesempreses= Oferta.objects.all().filter(nomempresadelaoferta='empresa')
+
     print(type(toteslesempreses))
     print(toteslesempreses)
     for x in toteslesempreses:
