@@ -9,6 +9,7 @@ class Company(models.Model):
     nomResponsable = models.CharField(max_length=500, blank=False, verbose_name="Nom del responsable")
     cognomResponsable = models.CharField(max_length=500, blank=False, verbose_name="Cognom del responsable")
     esempresaa=models.BooleanField(default=True)
+    nomusuari=models.CharField(blank=True,null=True,max_length=100)#el fiquem per al moment de crear la oferta agafem aquest camp
 
     def __str__(self):
         return self.user.get_username()

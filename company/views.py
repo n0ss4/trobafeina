@@ -2,11 +2,13 @@ from django.shortcuts import render
 from .models import Company
 from .forms import FormCompany
 from django.urls import reverse
-
+from oferta.models import Oferta
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.http import HttpResponse,HttpResponseRedirect
+from django.contrib.auth.models import User
+
 
 def formulari(request):
     print("-------------------------------------------------")
@@ -25,7 +27,7 @@ def formulari(request):
             print(form_data)
             obj= User.objects.create_user(nom,password=contra)
             obj.save()
-            obj1 = Company.objects.create(user=obj,cif=a1,sector=a2,descripcio=a3,nomResponsable=a4,cognomResponsable=a5)
+            obj1 = Company.objects.create(user=obj,cif=a1,sector=a2,descripcio=a3,nomResponsable=a4,cognomResponsable=a5,nomusuari=nom)
             obj1.save()
             user1=authenticate(username=nom, password=contra)
             login(request,user1)
@@ -37,11 +39,17 @@ def formulari(request):
 
     return render(request, 'company/company_form.html',context)
 
+
 def index_empresa(request):
-    print("----------")
-    tots=User.objects.all()
-    print(tots)
-    return render(request, 'company/index_company.html')
+    toteslesempreses= Oferta.objects.all().filter(nomempresadelaoferta='empresa')
+    print(type(toteslesempreses))
+    print(toteslesempreses)
+    for x in toteslesempreses:
+        print(x)
+    context = {
+        "toteslesempreses": toteslesempreses,
+    }
+    return render(request, 'company/index_company.html',context)
 
 
 

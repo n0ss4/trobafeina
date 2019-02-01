@@ -15,5 +15,7 @@ class Student(models.Model):
     situacio_laboral=models.CharField(max_length=400,blank=True,default='')
     #esempresaa=models.BooleanField(default=False)
 
+    def __str__(self):
+        return self.user.get_username()
 
 

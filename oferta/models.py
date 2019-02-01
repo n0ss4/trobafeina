@@ -1,7 +1,8 @@
 from django.db import models
 
 # Create your models here.
-from django.contrib.auth.models import User
+from company.models import Company
+from student.models import Student
 
 
 class Oferta(models.Model):
@@ -19,4 +20,14 @@ class Oferta(models.Model):
     #publicada = models.DateTimeField(auto_now_add=True,auto_now=False)
     numero_de_vacants = models.IntegerField(blank=False,null=True)
     salari = models.CharField(max_length=200, blank=False,null=True)
-    users = models.ForeignKey(User, on_delete=models.CASCADE)#el set hace todos
+    empresadelaoferta = models.ForeignKey(Company, on_delete=models.CASCADE)#es la empresa
+    oferta_inscrits=models.ManyToManyField(Student,through='ofertainscrits')
+    nomempresadelaoferta=models.CharField(blank=True,null=True,max_length=1000)
+
+
+
+class ofertainscrits(models.Model):
+    estudiant=models.ForeignKey(Student, on_delete=models.CASCADE)
+    oferta= models.ForeignKey(Oferta,on_delete=models.CASCADE)
+
+
