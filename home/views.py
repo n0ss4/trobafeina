@@ -6,21 +6,27 @@ from django.urls import reverse
 
 
 def index(request):
-    if request.user.is_authenticated:#si el usuari esta autentificat
-        print('autentificat')
-        id_autentifiat=request.user
-        print(request.user)
-        nom_autentifiat=str(request.user.get_username())#agafem el user del usuari autentificat i el passem a string
+    # Si l'usuari esta autenticat entrara.
+    if request.user.is_authenticated:
+        # Seguidament agafara l'usuari a traves del request.user
+        usuari=request.user
+        # Agafarem totes les empreses i tots els estudiants.
         companys = Company.objects.all()
         students = Student.objects.all()
-        if companys.get().user.get_username().find(nom_autentifiat) == 0:
+        # Farem un filter de tots els companys per veure si dintre de empreses existeix aquest usuari.
+        if companys.filter(user=usuari):
+            # Si es aixi el returnarem al panell d'empresa.
             return HttpResponseRedirect(reverse('home:empresa:index_empresa',))
-        elif students.get().user.get_username().find(nom_autentifiat) == 0:
+        # Si no es una empresa pero es un estudiant...
+        elif students.filter(user=usuari):
+            # Entrara dintre del panell d'estudiants...
             return HttpResponseRedirect(reverse('home:estudiant:index_student', ))
-        elif nom_autentifiat == 'admin':
+        # Si no es un estudiant i tampoc es una empresa, pero el seu nom es 'admin'
+        elif str(request.user.get_username()) == 'admin':
+            # Entrara dintre del panell d'administracio
             return HttpResponseRedirect('/admin')
     else:
-        print('user no autentificat')
+        # I finalment si no es cap dels altres el retornara al index.html
         return render(request, 'JobOffer/index.html')
 
 
