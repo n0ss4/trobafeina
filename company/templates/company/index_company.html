@@ -12,6 +12,7 @@
 
 {% for x in toteslesempreses %}
 <li>{{ x.nom }}</li>
+        <li><a href="{% url 'home:empresa:info_oferta' x.id %}">mes info</a></li>
 
 {% endfor %}
 </body>
