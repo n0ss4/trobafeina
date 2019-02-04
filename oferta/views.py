@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django.shortcuts import render
 from oferta.forms import PubJobOffer
 from oferta.models import Oferta
@@ -5,6 +7,7 @@ from django.contrib.auth.models import User
 from company.models import Company
 from django.http import HttpResponse,HttpResponseRedirect
 from django.urls import reverse
+
 
 # Create your views here.
 def crearoferta(request):
@@ -29,10 +32,10 @@ def crearoferta(request):
             abc7 = form_data.get("salari")
             nom_autentifiat = str(request.user.get_username())
             empresa = Company.objects.get(nomusuari=nom_autentifiat)
-            obj = Oferta.objects.create(nom=abc,requirements=abc1,experience=abc2,minimum_requirements=abc3,description=abc4,numero_de_vacants=abc6,salari=abc7,empresadelaoferta=empresa,nomempresadelaoferta=nom_autentifiat)
+            obj = Oferta.objects.create(nom=abc, requirements=abc1, experience=abc2, minimum_requirements=abc3, description=abc4, numero_de_vacants=abc6, salari=abc7, empresadelaoferta=empresa, nomempresadelaoferta=nom_autentifiat)
             obj.save()
             return HttpResponseRedirect(reverse('home:empresa:index_empresa',))
-    context={
-        "el_form_crearoferta":form,
+    context = {
+        "el_form_crearoferta": form,
     }
     return render(request, 'oferta/formulari_crea_oferta.html', context)

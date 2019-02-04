@@ -2,6 +2,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from company.models import Company
 from student.models import Student
+from django.contrib.auth.models import User
 from django.urls import reverse
 
 
@@ -10,9 +11,10 @@ def index(request):
     if request.user.is_authenticated:
         # Seguidament agafara l'usuari a traves del request.user
         usuari=request.user
-        # Agafarem totes les empreses i tots els estudiants.
+        # Agafarem totes les empreses, tots els estudiants i tots els usuaris.
         companys = Company.objects.all()
         students = Student.objects.all()
+        users = User.objects.all()
         # Farem un filter de tots els companys per veure si dintre de empreses existeix aquest usuari.
         if companys.filter(user=usuari):
             # Si es aixi el returnarem al panell d'empresa.
@@ -21,8 +23,8 @@ def index(request):
         elif students.filter(user=usuari):
             # Entrara dintre del panell d'estudiants...
             return HttpResponseRedirect(reverse('home:estudiant:index_student', ))
-        # Si no es un estudiant i tampoc es una empresa, pero el seu nom es 'admin'
-        elif str(request.user.get_username()) == 'admin':
+        # Si no es un estudiant i tampoc es una empresa, pero es un superusuari accedira al panell d'administrador
+        elif users.filter(username=usuari)[0].is_superuser:
             # Entrara dintre del panell d'administracio
             return HttpResponseRedirect('/admin')
     else:
