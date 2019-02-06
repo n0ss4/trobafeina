@@ -11,7 +11,7 @@
     <div class="list-group">
     <h4 class="text-uppercase mb-3">Les meves ofertes</h4>
     {% for x in toteslesempreses %}
-    <a href="#" class="list-group-item list-group-item-action mb-2 rounded">
+    <a href="{% url 'home:empresa:info_oferta' x.id %}" class="list-group-item list-group-item-action mb-2 rounded">
         <div class="col-12 row">
             <div class="col-2 p-3 pr-5 border-right text-center"><i class="fas fa-business-time fa-4x"></i></div>
             <div class="col-10"><h5 class="text-uppercase">{{ x.nom }}</h5></div>
