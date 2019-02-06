@@ -12,6 +12,6 @@ class Company(models.Model):
     esempresaa=models.BooleanField(default=True)
     nomusuari=models.CharField(blank=True,null=True,max_length=100)#el fiquem per al moment de crear la oferta agafem aquest camp
 
-    #def __str__(self):
-    #    return self.user.get_username()
+    def __str__(self):
+        return self.user.get_username()
 
