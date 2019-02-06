@@ -1,10 +1,39 @@
 {% extends 'base.html' %}
-{% block title %}Registre empresa{% endblock %}
 {% block content %}
-<form method="post" action="">
-    {% csrf_token %}<!--Contra la falsificacion de peticions-->
-{{ el_form_registre_nova_empresa.as_p }}
 
-<input type="submit" value="Registrame">
+
+<div class="container col-12 my-auto">
+<form method="post" action="">
+    <h2 class="ml-2">EMPRESA</h2>
+    {% csrf_token %}<!--Contra la falsificacion de peticions-->
+    <div class="row col-12">
+        <div class="col-md-6 col-12">
+    <div class="form-label-group">
+        <label for="id_cif">CIF:</label> <input type="text" name="cif" class="form-control" required="" id="id_cif" maxlength="9">
+    </div>
+    <div class="form-label-group">
+        <label for="id_sector">Sector:</label> <input type="text" name="sector" class="form-control" required="" id="id_sector" maxlength="500">
+    </div>
+    <div class="form-label-group">
+        <label for="id_descripcio">Descripció:</label> <textarea name="descripcio" class="form-control" id="id_descripcio" required="" rows="10" cols="40" maxlength="500"></textarea>
+    </div>
+        </div>
+        <div class="col-md-6 col-12">
+            <div class="form-label-group">
+        <label for="id_nomResponsable">Nom del responsable:</label> <input type="text" class="form-control" name="nomResponsable" required="" id="id_nomResponsable" maxlength="500">
+    </div>
+    <div class="form-label-group">
+        <label for="id_cognomResponsable">Cognom del responsable:</label> <input type="text" class="form-control" name="cognomResponsable" required="" id="id_cognomResponsable" maxlength="500">
+    </div>
+    <div class="form-label-group">
+        <label for="id_nom_usuari">Nom usuari:</label> <input type="text" name="nom_usuari" class="form-control" required="" id="id_nom_usuari">
+    </div>
+    <div class="form-label-group">
+        <label for="id_contrasenya">Contrasenya:</label> <input type="text" name="contrasenya" class="form-control" required="" id="id_contrasenya">
+    </div>
+            <button class="btn btn-outline-dark mt-3">Registrame</button>
+        </div>
+    </div>
 </form>
+</div>
 {% endblock %}

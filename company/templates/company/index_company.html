@@ -1,18 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>Hola empresa</h1>
-    {{user.get_username }}
-<a href="{% url 'logout' %}"> Logout</a>
-<a href="{% url 'home:empresa:oferta:oferta' %}"> Crear Oferta</a>
+{% extends 'base.html' %}
+{% block menu %}
+  <h2 class="text-uppercase" style="position: absolute;z-index: 1;padding: 20px 15px 15px 15px;">Benvingut/da, {{user.get_username }}</h2>
+  <a class="btn btn-outline-success text-uppercase" href="{% url 'home:empresa:oferta:oferta' %}" style="position: absolute;z-index: 1;margin: 20px 15px 15px 15px;/*! left: 95px; */right: 175px;">Nova oferta</a>
+  <a class="btn btn-outline-danger text-uppercase" href="{% url 'logout' %}" style="position: absolute;z-index: 1;margin: 20px 15px 15px 15px;/*! left: 1075px; */right: 75px;">Sortir</a>
+{% endblock %}
+{% block content %}
+    <div class="container col-12 mx-auto" align="center">
 
-{% for x in toteslesempreses %}
-<li>{{ x.nom }}</li>
+    <div class="col-md-6 col-12 p-0 pt-2 text-left">
+    <div class="list-group">
+    <h4 class="text-uppercase mb-3">Les meves ofertes</h4>
+    {% for x in toteslesempreses %}
+    <a href="#" class="list-group-item list-group-item-action mb-2 rounded">
+        <div class="col-12 row">
+            <div class="col-2 p-3 pr-5 border-right text-center"><i class="fas fa-business-time fa-4x"></i></div>
+            <div class="col-10"><h5 class="text-uppercase">{{ x.nom }}</h5></div>
+        </div>
+    </a>
+    {% endfor %}
 
-{% endfor %}
-</body>
-</html>
+    </div>
+    </div>
+    </div>
+{% endblock %}

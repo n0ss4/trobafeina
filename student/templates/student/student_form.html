@@ -1,23 +1,30 @@
 {% extends 'base.html' %}
-{% block title %}Registre estudiant{% endblock %}
 {% block content %}
     <style>
         label{
             min-width: 150px;
         }
     </style>
-    <div class="col-12 row">
-        <div class="col-6 pl-5">
+    <div class="container col-12 my-auto">
             <form method="post" action="">
+                <h2 class="ml-md-2">ESTUDIANT</h2>
                 {% csrf_token %}
-            {{ el_form_formulari_student.as_p }}
-                <button class="btn btn-outline-dark">Registrame</button>
+                <div class="row col-12">
+                    <div class="col-md-6 col-12">
+                    <div class="form-label-group"><label for="id_experiencia">Experiencia:</label> <input class="form-control" type="text" name="experiencia" required="" id="id_experiencia" maxlength="40000"></div>
+                    <div class="form-label-group"><label for="id_estudis">Estudis:</label> <input class="form-control" type="text" name="estudis" id="id_estudis" maxlength="400"></div>
+                    <div class="form-label-group"><label for="id_idiomes">Idiomes:</label> <input class="form-control" type="text" name="idiomes" id="id_idiomes" maxlength="400"></div>
+                    <div class="form-label-group"><label for="id_coneixements">Coneixements:</label> <input class="form-control" type="text" name="coneixements" id="id_coneixements" maxlength="400"></div>
+                    </div>
+                    <div class="col-md-6 col-12">
+                    <div class="form-label-group"><label for="id_carnet_de_conduir">Carnet de conduir:</label> <input class="form-control" type="text" name="carnet_de_conduir" id="id_carnet_de_conduir" maxlength="400"></div>
+                    <div class="form-label-group"><label for="id_situacio_laboral">Situacio laboral:</label> <input class="form-control" type="text" name="situacio_laboral" id="id_situacio_laboral" maxlength="400"></div>
+                    <div class="form-label-group"><label for="id_nom_usuari">Nom usuari:</label> <input class="form-control" type="text" name="nom_usuari" required="" id="id_nom_usuari"></div>
+                    <div class="form-label-group"><label for="id_contrasenya">Contrasenya:</label> <input class="form-control" type="password" name="contrasenya" required="" id="id_contrasenya"></div><br>
+                    </div>
+                </div>
+                <button class="btn btn-outline-dark ml-md-2">Registrame</button>
             </form>
-        </div>
-        <div class="col-6">
-            {% load static %}
-            <img src="{% static 'img/register/formularis/estudiant.jpeg' %}">
-        </div>
     </div>
 
 {% endblock %}

@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>Hola estudiant</h1>
-    {{user.get_username }}
-<a href="{% url 'logout' %}"> Logout</a>
-
-
-</body>
-</html>
+{% extends 'base.html' %}
+{% block menu %}
+    <h2 class="text-uppercase" style="position: absolute;z-index: 1;padding: 20px 15px 15px 15px;">Benvingut/da, {{user.get_username }}</h2>
+    <a class="btn btn-outline-danger text-uppercase" href="{% url 'logout' %}" style="position: absolute;z-index: 1;margin: 20px 15px 15px 15px;/*! left: 1075px; */right: 75px;">Sortir</a>
+{% endblock %}
+{% block content %}
+{% endblock %}

@@ -1,6 +1,35 @@
 
+{% extends 'base.html' %}
 {% block content %}
-    <h1>Registre</h1>
-    <li><a href="{% url 'home:estudiant:registre' %}">Formulari student</a></li>
-    <li><a href="{% url 'home:empresa:registre' %}">Formulari company</a></li>
+    {% load static %}
+
+    <style>
+    a.col-5{
+        width: 100%;
+    }
+    a div:hover{
+        opacity: 0.5;
+    }
+
+    div.estudiant{
+        height: 40vh; background-image: url('{% static 'img/register/estudiant.jpg' %}');
+        color: white; font-family: 'Segoe UI Black'; background-size: cover;
+    }
+
+    div.empresa{
+        width: 100%; height: 40vh; background-image: url('{% static 'img/register/empresa.jpeg' %}');
+        color: white; font-family: 'Segoe UI Black';  background-size: cover;
+    }
+    </style>
+
+    <div class="col-12 row my-auto" style="width: 100%;">
+        <a class="offset-1 col-md-4 col-12" href="{% url 'home:estudiant:registre' %}">
+
+            <div class="estudiant p-4 rounded text-center"><h3>ESTUDIANT</h3></div>
+        </a>
+        <a class="col-md-4 col-12 offset-md-2" href="{% url 'home:empresa:registre' %}">
+            <div class="p-4 rounded empresa text-center"><h3>EMPRESA</h3></div>
+        </a>
+    </div>
+
 {% endblock %}
