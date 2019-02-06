@@ -26,10 +26,12 @@ class Oferta(models.Model):
     oferta_inscrits=models.ManyToManyField(Student,through='ofertainscrits')
     nomempresadelaoferta=models.CharField(blank=True,null=True,max_length=1000)
 
-
-
 class ofertainscrits(models.Model):
     estudiant=models.ForeignKey(Student, on_delete=models.CASCADE)
     oferta= models.ForeignKey(Oferta,on_delete=models.CASCADE)
+    class Meta:
+        unique_together = (("estudiant", "oferta"),)
+
+
 
 

@@ -2,7 +2,7 @@ from django.shortcuts import render,get_object_or_404
 from .models import Company
 from .forms import FormCompany
 from django.urls import reverse
-from oferta.models import Oferta
+from oferta.models import Oferta, ofertainscrits
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
@@ -35,6 +35,7 @@ def formulari(request):
             login(request,user1)
             return HttpResponseRedirect(reverse('home:empresa:index_empresa',))
             #return render(request, 'company/index_company.html')
+
     context={
         "el_form_registre_nova_empresa":form,
     }
@@ -90,3 +91,8 @@ def info_oferta(request,x_id):
     }
     return render(request,'company/info_oferta.html',context)
 
+def persones_inscrites(request,x_id):
+    totselsmembres=ofertainscrits.objects.all().filter(oferta=x_id)
+    for x in totselsmembres:
+        print (x.estudiant.user.get_username())
+    return render(request,'company/persones_inscrites.html')

@@ -8,7 +8,13 @@
 <h1>Hola estudiant</h1>
     {{user.get_username }}
 <a href="{% url 'logout' %}"> Logout</a>
+    {% for x in toteslesempreses %}
+            <h1>------------------</h1>
 
+    <li>{{ x.nom }}</li>
+    <li>{{ x.description }}</li>
+        <li><a href="{% url 'home:estudiant:info_oferta' x.id %}">mes info</a></li>
 
+    {% endfor %}
 </body>
 </html>

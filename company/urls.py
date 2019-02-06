@@ -10,4 +10,6 @@ urlpatterns = [
     url(r'^crearoferta/', include('oferta.urls')),
     url(r'^(?P<x_id>\d+)/$', views.info_oferta, name='info_oferta'),
     url(r'^eliminar/(?P<x_id>\d+)/$', views.eliminar, name='eliminar'),
+    url(r'^personesinscrites/(?P<x_id>\d+)/$', views.persones_inscrites, name='persones_inscrites'),
+
 ]

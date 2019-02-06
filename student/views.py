@@ -1,4 +1,7 @@
-from django.shortcuts import render
+
+from django.shortcuts import render, get_object_or_404
+
+from oferta.models import Oferta,ofertainscrits
 from .forms import FormStudent
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
@@ -37,4 +40,52 @@ def formulari_student(request):
     return render(request, 'student/student_form.html',context)
 
 def index_student(request):
-    return render(request, 'student/index_student.html')
+    toteslesempreses= Oferta.objects.all()
+    """totesofertesinscrits=ofertainscrits.objects.all()
+    for x in totesofertesinscrits:
+        print (x.estudiant.user.get_username())
+        print (x.oferta.id)
+        print (x.estudiant.id)
+"""
+    context = {
+        "toteslesempreses": toteslesempreses,
+    }
+
+    return render(request, 'student/index_student.html',context)
+
+def info_oferta(request,x_id):
+    print ("--------------")
+    oferta= get_object_or_404(Oferta,pk=x_id)
+
+    context = {
+        "infooferta": oferta,
+    }
+    return render(request,'student/info_oferta.html',context)
+
+def inscriures(request,id_oferta):
+    usuari = request.user
+    estudiant = Student.objects.all().filter(user=usuari)[0]
+    oferta = Oferta.objects.get(pk=id_oferta)
+    tots=ofertainscrits.objects.all()
+    texto="T'estas intentan registra a una oferta que ja t'has registrat"
+    context = {
+        "infooferta": oferta,
+        "mensaje":texto,
+    }
+    if tots.filter(estudiant=estudiant,oferta=oferta):
+        print ("existeee")
+
+        return render(request, 'student/info_oferta.html', context)
+
+    else:
+        ofertainscrits.objects.create(estudiant=estudiant,oferta=oferta)
+
+    print (id_oferta)
+
+    print (oferta.nom)
+    #print (students)
+    print (estudiant.user.get_username())
+    #print (Student.user.get_username())
+    return HttpResponseRedirect(reverse('home:estudiant:index_student', ))
+
+
