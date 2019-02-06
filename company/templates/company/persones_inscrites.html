@@ -5,6 +5,9 @@
     <title>Title</title>
 </head>
 <body>
-
+<h1>Persones inscrites</h1>
+{% for x in totselsmembres %}
+    <h1>{{ x.estudiant.user.get_username }}</h1>
+ {% endfor %}
 </body>
 </html>
