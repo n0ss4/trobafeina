@@ -95,4 +95,8 @@ def persones_inscrites(request,x_id):
     totselsmembres=ofertainscrits.objects.all().filter(oferta=x_id)
     for x in totselsmembres:
         print (x.estudiant.user.get_username())
-    return render(request,'company/persones_inscrites.html')
+
+    context = {
+        "totselsmembres": totselsmembres,
+    }
+    return render(request,'company/persones_inscrites.html',context)
