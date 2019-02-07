@@ -13,5 +13,10 @@ class FormStudent(ModelForm):
 
     class Meta:
         model = Student
-        fields = ["experiencia", "estudis", "idiomes","coneixements","carnet_de_conduir","situacio_laboral"]#Seran els que es mostraran al formulari
+        fields = ["nom","cognom","dni","adreca","poblacio","codi_postal","telefon","correu_electronic","edat","estudis","experiencia"]#Seran els que es mostraran al formulari
+
+class EditStudent(ModelForm):
+     class Meta:
+        model = Student
+        fields = ["nom","cognom","adreca","poblacio","codi_postal","telefon","correu_electronic","edat","estudis","experiencia"]#Seran els que es mostraran al formulari
 

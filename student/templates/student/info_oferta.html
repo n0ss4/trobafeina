@@ -6,14 +6,16 @@
 </head>
 <body>
 
-    <li>{{ infooferta.nom }}</li>
-    <li>{{ infooferta.description }}</li>
-<li>{{ infooferta.requirements }}</li>
-<li>{{ infooferta.experience }}</li>
-<li>{{ infooferta.minimum_requirements }}</li>
-<li>{{ infooferta.numero_de_vacants }}</li>
+    <li>{{ infooferta.nom_oferta }}</li>
+    <li>{{ infooferta.poblacio }}</li>
+<li>{{ infooferta.telefon }}</li>
+<li>{{ infooferta.lloc_treball_sofereix }}</li>
+<li>{{ infooferta.horari }}</li>
+<li>{{ infooferta.caracteristiques }}</li>
+<li>{{ infooferta.numero_vacants }}</li>
 <li>{{ infooferta.salari }}</li>
-<li>{{ infooferta.description }}</li>
+    <li>{{ infooferta.salari }}</li>
+    <li>{{ infooferta.empresadelaoferta.user.get_username }}</li>
     {{ mensaje }}
 <li><a href="{% url 'home:estudiant:inscriures' infooferta.id %}">Incriures</a></li>
 

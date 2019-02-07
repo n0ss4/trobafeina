@@ -6,9 +6,4 @@ from oferta.models import Oferta
 class PubJobOffer(ModelForm):
     class Meta:
         model = Oferta
-        fields = ["requirements","nom","experience","minimum_requirements","description","numero_de_vacants","salari"]#Seran els que es mostraran al formulari
-        widgets = {
-            'nom': forms.TextInput(attrs={'placeholder':'nom'}),
-            'requirements': forms.Textarea(attrs={'placeholder': 'nom'}),
-
-        }
+        fields = ["nom_oferta","poblacio","telefon","lloc_treball_sofereix","horari","caracteristiques","numero_vacants","salari"]#Seran els que es mostraran al formulari
