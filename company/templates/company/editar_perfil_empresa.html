@@ -2,9 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<h1>Edita el teu perfil</h1>
+<form method="post" action="">
+    {% csrf_token %}<!--Contra la falsificacion de peticions-->
+{{ editar_perfil.as_p }}
+    <input type="submit" value="Actualitzar">
+</form>
 </body>
 </html>

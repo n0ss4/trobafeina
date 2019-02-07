@@ -10,3 +10,10 @@ class FormCompany(ModelForm):
     class Meta:
         model = Company
         fields = ["cif", "sector", "descripcio", "nomResponsable", "cognomResponsable"]
+
+class EditComany(ModelForm):
+
+    class Meta:
+        model = Company
+        fields = ["sector", "descripcio", "nomResponsable", "cognomResponsable"]
+

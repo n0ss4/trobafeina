@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
-    <style>
+    <form method="post" action="">
+    {% csrf_token %}<!--Contra la falsificacion de peticions-->
+{{ el_form_formulari_student.as_p }}
+    <input type="submit" value="Actualitzar">
+</form>
+    <!--<style>
         label{
             min-width: 150px;
         }
@@ -25,6 +30,6 @@
                 </div>
                 <button class="btn btn-outline-dark ml-md-2">Registrame</button>
             </form>
-    </div>
+    </div>-->
 
 {% endblock %}

@@ -11,5 +11,7 @@ urlpatterns = [
     url(r'^(?P<x_id>\d+)/$', views.info_oferta, name='info_oferta'),
     url(r'^eliminar/(?P<x_id>\d+)/$', views.eliminar, name='eliminar'),
     url(r'^personesinscrites/(?P<x_id>\d+)/$', views.persones_inscrites, name='persones_inscrites'),
+    url(r'^editarperfil/(?P<id_user>\d+)/$', views.editar_perfil, name='editar_perfil'),
+    url(r'^info_perfil_estudiant/(?P<id_student>\d+)/$', views.info_perfil_estudiant, name='info_perfil_estudiant'),
 
 ]

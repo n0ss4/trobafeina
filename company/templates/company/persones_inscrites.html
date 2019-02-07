@@ -7,7 +7,9 @@
 <body>
 <h1>Persones inscrites</h1>
 {% for x in totselsmembres %}
-    <h1>{{ x.estudiant.user.get_username }}</h1>
+    <h1>{{ x.estudiant.nom }}</h1>
+
+    <a href="{% url 'home:empresa:info_perfil_estudiant' x.estudiant.user_id %}">{{ x.estudiant.nom }} {{ x.estudiant.cognom }} </a>
  {% endfor %}
 </body>
 </html>

@@ -2,6 +2,8 @@
 {% block menu %}
     <h2 class="text-uppercase" style="position: absolute;z-index: 1;padding: 20px 15px 15px 15px;">Benvingut/da, {{user.get_username }}</h2>
     <a class="btn btn-outline-danger text-uppercase" href="{% url 'logout' %}" style="position: absolute;z-index: 1;margin: 20px 15px 15px 15px;/*! left: 1075px; */right: 75px;">Sortir</a>
+        <a class="btn btn-outline-secondary text-uppercase" href="{% url 'home:estudiant:editar_perfil' user.id %}" style="position: absolute;z-index: 1;margin: 20px 15px 15px 15px;/*! left: 1075px; */right: 175px;">Editar perfil</a>
+
 {% endblock %}
 {% block content %}
     <div class="container col-12 mx-auto" align="center">
@@ -9,11 +11,11 @@
     <div class="col-md-6 col-12 p-0 pt-2 text-left">
     <div class="list-group">
     <h4 class="text-uppercase mb-3">Ofertes</h4>
-    {% for x in toteslesempreses %}
-    <a href="{% url 'home:empresa:info_oferta' x.id %}" class="list-group-item list-group-item-action mb-2 rounded">
+    {% for x in toteslesofertes %}
+    <a href="{% url 'home:estudiant:info_oferta' x.id %}" class="list-group-item list-group-item-action mb-2 rounded">
         <div class="col-12 row">
             <div class="col-2 p-3 pr-5 border-right text-center"><i class="fas fa-business-time fa-4x"></i></div>
-            <div class="col-10"><h5 class="text-uppercase">{{ x.nom }}</h5><p>{{ x.description }}</p></div>
+            <div class="col-10"><h5 class="text-uppercase">{{ x.nom_oferta }}</h5><p>{{ x.caracteristiques }}</p></div>
         </div>
     </a>
     {% endfor %}
