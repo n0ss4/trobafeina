@@ -1,15 +1,20 @@
-{% extends 'base.html' %}
+{% extends 'panel.html' %}
 {% block menu %}
   <h2 class="text-uppercase" style="position: absolute;z-index: 1;padding: 20px 15px 15px 15px;">Benvingut/da, {{user.get_username }}</h2>
-  <a class="btn btn-outline-success text-uppercase" href="{% url 'home:empresa:oferta:oferta' %}" style="position: absolute;z-index: 1;margin: 20px 15px 15px 15px;/*! left: 95px; */right: 175px;">Nova oferta</a>
-  <a class="btn btn-outline-danger text-uppercase" href="{% url 'logout' %}" style="position: absolute;z-index: 1;margin: 20px 15px 15px 15px;/*! left: 1075px; */right: 75px;">Sortir</a>
 {% endblock %}
 {% block content %}
     <div class="container col-12 mx-auto" align="center">
 
     <div class="col-md-6 col-12 p-0 pt-2 text-left">
     <div class="list-group">
-    <h4 class="text-uppercase mb-3">Les meves ofertes</h4>
+    <div class="row p-0 pt-2 pb-2">
+        <div class="col-8">
+            <h4 class="text-uppercase mb-3">Les meves ofertes</h4>
+        </div>
+        <div class="col-4 text-right">
+            <a class="btn btn-outline-success text-uppercase" href="{% url 'home:empresa:oferta:oferta' %}">Nova oferta</a>
+        </div>
+    </div>
     {% for x in toteslesempreses %}
     <a href="{% url 'home:empresa:info_oferta' x.id %}" class="list-group-item list-group-item-action mb-2 rounded">
         <div class="col-12 row">

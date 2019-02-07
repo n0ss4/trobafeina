@@ -1,7 +1,6 @@
-{% extends 'base.html' %}
+{% extends 'panel.html' %}
 {% block menu %}
     <h2 class="text-uppercase" style="position: absolute;z-index: 1;padding: 20px 15px 15px 15px;">Benvingut/da, {{user.get_username }}</h2>
-    <a class="btn btn-outline-danger text-uppercase" href="{% url 'logout' %}" style="position: absolute;z-index: 1;margin: 20px 15px 15px 15px;/*! left: 1075px; */right: 75px;">Sortir</a>
 {% endblock %}
 {% block content %}
     <div class="container col-12 mx-auto" align="center">

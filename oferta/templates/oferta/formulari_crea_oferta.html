@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>Crea la teva oferta</h1>
+{% extends 'panel.html' %}
+{% block menu %}
+    <h2 class="text-uppercase" style="position: absolute;z-index: 1;padding: 20px 15px 15px 15px;">Crea una nova oferta</h2>
+{% endblock %}
+{% block content %}
 <form method="post" action="">
     {% csrf_token %}<!--Contra la falsificacion de peticions-->
 {{ el_form_crearoferta.as_p }}
 <input type="submit" value="Registrame">
-</form>-->
-</body>
-</html>
+</form>
+{% endblock %}
