@@ -1,15 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>Edita el teu perfil</h1>
-<form method="post" action="">
-    {% csrf_token %}<!--Contra la falsificacion de peticions-->
-{{ editar_perfil.as_p }}
-    <input type="submit" value="Actualitzar">
-</form>
-</body>
-</html>
+{% extends 'panel.html' %}
+{% block menu %}
+  <h2 class="text-uppercase" style="position: absolute;z-index: 1;padding: 20px 15px 15px 15px;">{{ user.get_username }}</h2>
+{% endblock %}
+{% block content %}
+<div class="container col-12 my-auto">
+    <form method="post" action="">
+    {% csrf_token %}
+        <div class="row col-12">
+            <div class="col-lg-6 col-12">
+                <div class="form-label-group"><label for="id_nom">Nom:</label> <input class="form-control" type="text" name="nom" value="Nossair" required="" id="id_nom" maxlength="100"></div>
+                <div class="form-label-group"><label for="id_cognom">Cognom:</label> <input class="form-control" type="text" name="cognom" value="Ghazouani" required="" id="id_cognom" maxlength="100"></div>
+                <div class="form-label-group"><label for="id_adreca">Adreça:</label> <input class="form-control" type="text" name="adreca" value="asdsad" required="" id="id_adreca" maxlength="100"></div>
+                <div class="form-label-group"><label for="id_poblacio">Població:</label> <input class="form-control" type="text" name="poblacio" value="asdasd" required="" id="id_poblacio" maxlength="100"></div>
+                <div class="form-label-group"><label for="id_codi_postal">Codi Postal:</label> <input class="form-control" type="text" name="codi_postal" value="adsdas" required="" id="id_codi_postal" maxlength="100"></div>
+            </div>
+            <div class="col-lg-6 col-12">
+                <div class="form-label-group"><label for="id_telefon">Telèfon:</label> <input class="form-control" type="text" name="telefon" value="asdasd" required="" id="id_telefon" maxlength="100"></div>
+                <div class="form-label-group"><label for="id_correu_electronic">Correu electronic:</label> <input class="form-control" type="text" name="correu_electronic" value="saddas" required="" id="id_correu_electronic" maxlength="100"></div>
+                <div class="form-label-group"><label for="id_edat">Edat:</label> <input class="form-control" type="text" name="edat" value="asdsada" required="" id="id_edat" maxlength="100"></div>
+                <div class="form-label-group"><label for="id_estudis">Estudis:</label> <input class="form-control" type="text" name="estudis" value="dasdas" required="" id="id_estudis" maxlength="1000"></div>
+                <div class="form-label-group"><label for="id_experiencia">Experiencia:</label> <input class="form-control" type="text" name="experiencia" value="sadasdas" required="" id="id_experiencia" maxlength="1000"></div>
+            </div>
+            <div class="col-12 mt-3">
+                <a class="btn btn-success btn-lg text-white" type="submit" ><span class="mr-3">Actualizar</span><i class="fas fa-save"></i></a>
+            </div>
+
+        </div>
+    </form>
+</div>
+{% endblock %}

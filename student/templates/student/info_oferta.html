@@ -1,23 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'panel.html' %}
+{% block menu %}
+    <h2 class="text-uppercase" style="position: absolute;z-index: 1;padding: 20px 15px 15px 15px;">{{ infooferta.empresadelaoferta.user.get_username }}</h2>
+{% endblock %}
+{% block content %}
+<style>
+    i{
+        margin-right: 5px;
+    }
+    </style>
 
-    <li>{{ infooferta.nom_oferta }}</li>
-    <li>{{ infooferta.poblacio }}</li>
-<li>{{ infooferta.telefon }}</li>
-<li>{{ infooferta.lloc_treball_sofereix }}</li>
-<li>{{ infooferta.horari }}</li>
-<li>{{ infooferta.caracteristiques }}</li>
-<li>{{ infooferta.numero_vacants }}</li>
-<li>{{ infooferta.salari }}</li>
-    <li>{{ infooferta.salari }}</li>
-    <li>{{ infooferta.empresadelaoferta.user.get_username }}</li>
-    {{ mensaje }}
-<li><a href="{% url 'home:estudiant:inscriures' infooferta.id %}">Incriures</a></li>
+    <div class="alert alert-danger" style="position: fixed; bottom: 0; right: 10px; height: 100px;" role="alert">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <p style="padding: 25px;">{{ mensaje }}</p>
+    </div>
+    <div class="container col-12 my-auto">
+        <div class="row col-12">
+            <div class="col-lg-6 col-12">
+                <dl class="row col-12">
+                    <dt class="col-lg-3 col-12 list-group-item active"><i class="fas fa-comment"></i> Nom oferta</dt>
+                    <dd class="col-12 list-group-item">{{ infooferta.nom_oferta }} </dd>
+                </dl>
+                <dl class="row col-12">
+                    <dt class="col-lg-3 col-12 list-group-item active"><i class="fas fa-city"></i> Població</dt>
+                    <dd class="col-12 list-group-item">{{ infooferta.poblacio }}</dd>
+                </dl>
+                <dl class="row col-12">
+                    <dt class="col-lg-3 col-12 list-group-item active"><i class="fas fa-phone"></i> Telèfon</dt>
+                    <dd class="col-12 list-group-item">{{ infooferta.telefon }}</dd>
+                </dl>
+                <dl class="row col-12">
+                    <dt class="col-lg-3 col-12 list-group-item active"><i class="fas fa-map-marker-alt"></i> Lloc de treball</dt>
+                    <dd class="col-12 list-group-item">{{ infooferta.lloc_treball_sofereix }}</dd>
+                </dl>
+            </div>
+            <div class="col-lg-6 col-12">
+                <dl class="row col-12">
+                    <dt class="col-lg-3 col-12 list-group-item active"><i class="fas fa-clock"></i> Horari</dt>
+                    <dd class="col-12 list-group-item">{{ infooferta.horari }}</dd>
+                </dl>
+                <dl class="row col-12">
+                    <dt class="col-lg-3 col-12 list-group-item active"><i class="fas fa-align-justify"></i> Característiques</dt>
+                    <dd class="col-12 list-group-item">{{ infooferta.caracteristiques }}</dd>
+                </dl>
+                <dl class="row col-12">
+                    <dt class="col-lg-3 col-12 list-group-item active"><i class="fas fa-users"></i> Numero de vacants</dt>
+                    <dd class="col-12 list-group-item">{{ infooferta.numero_vacants }}</dd>
+                </dl>
+                <dl class="row col-12">
+                    <dt class="col-lg-3 col-12 list-group-item active"><i class="fas fa-money-check-alt"></i> Salari</dt>
+                    <dd class="col-12 list-group-item">{{ infooferta.salari }}</dd>
+                </dl>
+            </div>
+            <div class="col-12">
+                <a class="btn btn-success btn-lg" type="submit" href="{% url 'home:estudiant:inscriures' infooferta.id %}"><span class="mr-3">Inscriurem</span><i class="fas fa-user-plus"></i></a>
+            </div>
+        </div>
+    </div>
 
-</body>
-</html>
+{% endblock %}

@@ -1,22 +1,34 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<form method="post" action="">
-    {% csrf_token %}<!--Contra la falsificacion de peticions-->
-{{ editar_oferta.as_p }}
+{% extends 'panel.html' %}
+{% block menu %}
+  <h2 class="text-uppercase" style="position: absolute;z-index: 1;padding: 20px 15px 15px 15px;">Edita la oferta</h2>
+{% endblock %}
+{% block content %}
+<div class="container col-12">
+    <form method="post" action="">
+    {% csrf_token %}
+        <div class="row col-12">
+            <div class="col-lg-6 col-12">
+                <div class="form-label-group"><label class="mt-2" for="id_nom_oferta">Nom oferta:</label> <input class="form-control" type="text" name="nom_oferta" value="TÈCNIC INFORMÀTIC" required="" id="id_nom_oferta" maxlength="100"></div>
+    <div class="form-label-group"><label class="mt-2" for="id_poblacio">Població:</label> <input class="form-control" type="text" name="poblacio" value="Mollet de Peralada" required="" id="id_poblacio" maxlength="100"></div>
+    <div class="form-label-group"><label class="mt-2" for="id_telefon">Telefon:</label> <input class="form-control" type="text" name="telefon" value="+34 667 811 967" required="" id="id_telefon" maxlength="100"></div>
+    <div class="form-label-group"><label class="mt-2" for="id_lloc_treball_sofereix">Lloc de treball que s'ofereix:</label> <input class="form-control" type="text" name="lloc_treball_sofereix" value="tècnic informàtic" required="" id="id_lloc_treball_sofereix" maxlength="500"></div>
+            </div>
+            <div class="col-lg-6 col-12">
+                    <div class="form-label-group"><label class="mt-2" for="id_horari">Horari:</label> <input class="form-control" type="text" name="horari" value="Jornada Completa" required="" id="id_horari" maxlength="100"></div>
+    <div class="form-label-group"><label class="mt-2" for="id_caracteristiques">Caracteristiques del treball a realitzar:</label> <input class="form-control" type="text" name="caracteristiques" value="Arreglar aparells" required="" id="id_caracteristiques" maxlength="900"></div>
+    <div class="form-label-group"><label class="mt-2" for="id_numero_vacants">Numero de vacants:</label> <input class="form-control" type="text" name="numero_vacants" value="20" required="" id="id_numero_vacants" maxlength="100"></div>
+    <div class="form-label-group"><label class="mt-2" for="id_salari">Salari:</label> <input class="form-control" type="text" name="salari" value="1000" required="" id="id_salari" maxlength="100"></div>
+            </div>
+        </div>
+        <div class="col-12 row mt-4">
+            <div class="col-12">
+            <a class="btn btn-success btn-lg text-white" type="submit" ><span class="mr-3">Desa</span><i class="fas fa-save"></i></a>
+            <a class="btn btn-danger btn-lg" type="submit" href="{% url 'home:empresa:eliminar' id %}"><span class="mr-3">Esborrar</span><i class="fas fa-trash"></i></a>
+            <a class="btn btn-info btn-lg" type="submit" href="{% url 'home:empresa:persones_inscrites' id %}"><span class="mr-3">Inscrits</span><i class="fas fa-users"></i></a>
+            </div>
+        </div>
+    </form>
+</div>
 
-<input type="submit" value="Registrame">
-</form>
-        <li><a href="{% url 'home:empresa:index_empresa'%}">Submit</a></li>
-        <li><a href="{% url 'home:empresa:eliminar' id %}">Delete</a></li>
-        <li><a href="{% url 'home:empresa:persones_inscrites' id %}">Persones Inscrits</a></li>
-
-
-
-</body>
-</html>
+{% endblock %}

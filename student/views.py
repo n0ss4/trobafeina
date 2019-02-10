@@ -61,7 +61,7 @@ def inscriures(request,id_oferta):
     estudiant = Student.objects.all().filter(user=usuari)[0]
     oferta = Oferta.objects.get(pk=id_oferta)
     tots=ofertainscrits.objects.all()
-    texto="T'estas intentan registra a una oferta que ja t'has registrat"
+    texto="T'estas intentant registrant a una oferta que ja t'has registrat"
     context = {
         "infooferta": oferta,
         "mensaje":texto,

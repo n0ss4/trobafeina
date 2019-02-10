@@ -1,22 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>informacio del estudiant</h1>
-<h1>{{ estudiant.nom }}</h1>
-<h1>{{ estudiant.cognom }}</h1>
-<h1>{{ estudiant.dni }}</h1>
-<h1>{{ estudiant.adreca }}</h1>
-<h1>{{ estudiant.poblacio }}</h1>
-<h1>{{ estudiant.codi_postal }}</h1>
-<h1>{{ estudiant.telefon }}</h1>
-<h1>{{ estudiant.correu_electronic }}</h1>
-<h1>{{ estudiant.edat }}</h1>
-<h1>{{ estudiant.estudis }}</h1>
-<h1>{{ estudiant.experiencia }}</h1>
+{% extends 'panel.html' %}
+{% block menu %}
+  <h2 class="text-uppercase" style="position: absolute;z-index: 1;padding: 20px 15px 15px 15px;">{{ estudiant.nom }} {{ estudiant.cognom }}</h2>
+{% endblock %}
+{% block content %}
+    <style>
+    i{
+        margin-right: 5px;
+    }
+    </style>
+    <div class="container col-12 my-auto">
+        <div class="row col-12">
+            <div class="col-lg-6 col-12">
+                <dl class="row col-12">
+                    <dt class="col-lg-3 col-12 list-group-item active"><i class="fas fa-id-card"></i> DNI</dt>
+                    <dd class="col-12 list-group-item">{{ estudiant.dni }} </dd>
+                </dl>
+                <dl class="row col-12">
+                    <dt class="col-lg-3 col-12 list-group-item active"><i class="fas fa-map-marker-alt"></i> Adreça</dt>
+                    <dd class="col-12 list-group-item">{{ estudiant.adreca }}</dd>
+                </dl>
+                <dl class="row col-12">
+                    <dt class="col-lg-3 col-12 list-group-item active"><i class="fas fa-city"></i> Població</dt>
+                    <dd class="col-12 list-group-item">{{ estudiant.poblacio }}</dd>
+                </dl>
+                <dl class="row col-12">
+                    <dt class="col-lg-3 col-12 list-group-item active"><i class="fas fa-phone"></i> Telèfon</dt>
+                    <dd class="col-12 list-group-item">{{ estudiant.telefon }}</dd>
+                </dl>
+            </div>
+            <div class="col-lg-6 col-12">
+                <dl class="row col-12">
+                    <dt class="col-lg-3 col-12 list-group-item active"><i class="fas fa-at"></i> Correu electrònic</dt>
+                    <dd class="col-12 list-group-item">{{ estudiant.correu_electronic }}</dd>
+                </dl>
+                <dl class="row col-12">
+                    <dt class="col-lg-3 col-12 list-group-item active"><i class="far fa-clock"></i> Edat</dt>
+                    <dd class="col-12 list-group-item">{{ estudiant.edat }}</dd>
+                </dl>
+                <dl class="row col-12">
+                    <dt class="col-lg-3 col-12 list-group-item active"><i class="fas fa-book"></i> Estudis</dt>
+                    <dd class="col-12 list-group-item">{{ estudiant.estudis }}</dd>
+                </dl>
+                <dl class="row col-12">
+                    <dt class="col-lg-3 col-12 list-group-item active"><i class="fas fa-briefcase"></i> Experiència</dt>
+                    <dd class="col-12 list-group-item">{{ estudiant.experiencia }}</dd>
+                </dl>
+            </div>
 
-</body>
-</html>
+        </div>
+
+    </div>
+
+{% endblock %}

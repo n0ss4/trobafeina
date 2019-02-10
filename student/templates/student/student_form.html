@@ -1,10 +1,41 @@
 {% extends 'base.html' %}
 {% block content %}
-    <form method="post" action="">
-    {% csrf_token %}<!--Contra la falsificacion de peticions-->
-{{ el_form_formulari_student.as_p }}
-    <input type="submit" value="Actualitzar">
+<div class="container col-12 my-auto">
+<form method="post" action="">
+{% csrf_token %}
+    <div class="row col-12">
+        <div class="col-md-4 col-12">
+            <div class="form-label-group"><label for="id_nom_usuari">Nom usuari:</label> <input class="form-control" type="text" name="nom_usuari" required="" id="id_nom_usuari"></div>
+            <div class="form-label-group"><label for="id_contrasenya">Contrasenya:</label> <input class="form-control" type="password" name="contrasenya" required="" id="id_contrasenya"></div>
+            <div class="form-label-group"><label for="id_nom">Nom:</label> <input class="form-control" type="text" name="nom" required="" id="id_nom" maxlength="100"></div>
+            <div class="form-label-group"><label for="id_cognom">Cognom:</label> <input class="form-control" type="text" name="cognom" required="" id="id_cognom" maxlength="100"></div>
+
+        </div>
+        <div class="col-md-4 col-12">
+
+            <div class="form-label-group"><label for="id_dni">DNI:</label> <input class="form-control" type="text" name="dni" required="" id="id_dni" maxlength="100"></div>
+            <div class="form-label-group"><label for="id_adreca">Adreça:</label> <input class="form-control" type="text" name="adreca" required="" id="id_adreca" maxlength="100"></div>
+            <div class="form-label-group"><label for="id_poblacio">Població:</label> <input class="form-control" type="text" name="poblacio" required="" id="id_poblacio" maxlength="100"></div>
+            <div class="form-label-group"><label for="id_codi_postal">Codi Postal:</label> <input class="form-control" type="text" name="codi_postal" required="" id="id_codi_postal" maxlength="100"></div>
+
+        </div>
+        <div class="col-md-4 col-12">
+            <div class="form-label-group"><label for="id_telefon">Telèfon:</label> <input class="form-control" type="text" name="telefon" required="" id="id_telefon" maxlength="100"></div>
+            <div class="form-label-group"><label for="id_correu_electronic">Correu electronic:</label> <input class="form-control" type="text" name="correu_electronic" required="" id="id_correu_electronic" maxlength="100"></div>
+            <div class="form-label-group"><label for="id_edat">Edat:</label> <input class="form-control" type="text" name="edat" required="" id="id_edat" maxlength="100"></div>
+            <div class="form-label-group"><label for="id_estudis">Estudis:</label> <input class="form-control" type="text" name="estudis" required="" id="id_estudis" maxlength="1000"></div>
+            <div class="form-label-group"><label for="id_experiencia">Experiencia:</label> <input class="form-control" type="text" name="experiencia" required="" id="id_experiencia" maxlength="1000"></div>
+        </div>
+        <div class="col-12">
+            <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+                <label class="form-check-label" for="exampleCheck1">He llegit i accepto la <a href="#">política de privacitat.</a></label>
+  </div>
+            <button class="btn btn-outline-dark mt-3">Registrame</button>
+        </div>
+    </div>
 </form>
+</div>
     <!--<style>
         label{
             min-width: 150px;

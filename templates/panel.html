@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
   <meta charset="utf-8">
@@ -39,7 +38,7 @@
         <a href="{% url 'home:index' %}"><i class="fas fa-home"></i> Inici</a>
       </li>
       <li class="sidebar-nav-item">
-        <a href="#"><i class="far fa-user"></i> Perfil</a>
+        <a href="{% block perfil %}{% endblock %}"><i class="far fa-user"></i> Perfil</a>
       </li>
       <li class="sidebar-nav-item">
         <a href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Sortir</a>

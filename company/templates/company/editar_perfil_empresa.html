@@ -1,15 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>Edita el teu perfil</h1>
+{% extends 'panel.html' %}
+{% block menu %}
+  <h2 class="text-uppercase" style="position: absolute;z-index: 1;padding: 20px 15px 15px 15px;">Edita el teu perfil</h2>
+{% endblock %}
+{% block content %}
+<div class="container my-auto col-12">
+
+
 <form method="post" action="">
-    {% csrf_token %}<!--Contra la falsificacion de peticions-->
-{{ editar_perfil.as_p }}
-    <input type="submit" value="Actualitzar">
+{% csrf_token %}
+    <div class="col-12 row">
+        <div class="col-lg-6 col-12">
+            <div class="form-label-group"><label for="id_sector">Sector:</label> <input class="form-control" type="text" name="sector" value="adsasdsadas" required="" id="id_sector" maxlength="500"></div>
+            <div class="form-label-group"><label class="mt-2" for="id_nomResponsable">Nom del responsable:</label> <input class="form-control" type="text" name="nomResponsable" value="asdasdas" required="" id="id_nomResponsable" maxlength="500"></div>
+            <div class="form-label-group"><label class="mt-2" for="id_cognomResponsable">Cognom del responsable:</label> <input class="form-control" type="text" name="cognomResponsable" value="sadasdas" required="" id="id_cognomResponsable" maxlength="500"></div>
+        </div>
+        <div class="col-lg-6 col-12">
+            <div class="form-label-group"><label class="mt-2" for="id_descripcio">Descripció:</label> <textarea style="height: 25vh;" class="form-control" name="descripcio" id="id_descripcio" required="" rows="10" cols="40" maxlength="500">sadasdas</textarea></div>
+        </div>
+    </div>
+    <div class="col-12 row mt-4">
+        <div class="col-lg-6 col-12">
+            <button class="btn btn-success btn-lg w-100" type="submit" >Actualitzar</button>
+        </div>
+    </div>
+
 </form>
-</body>
-</html>
+</div>
+{% endblock %}

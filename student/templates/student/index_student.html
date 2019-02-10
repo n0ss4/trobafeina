@@ -1,10 +1,8 @@
-{% extends 'base.html' %}
+{% extends 'panel.html' %}
 {% block menu %}
     <h2 class="text-uppercase" style="position: absolute;z-index: 1;padding: 20px 15px 15px 15px;">Benvingut/da, {{user.get_username }}</h2>
-    <!--<a class="btn btn-outline-danger text-uppercase" href="{% url 'logout' %}" style="position: absolute;z-index: 1;margin: 20px 15px 15px 15px;/*! left: 1075px; */right: 75px;">Sortir</a>
-        <a class="btn btn-outline-secondary text-uppercase" href="{% url 'home:estudiant:editar_perfil' user.id %}" style="position: absolute;z-index: 1;margin: 20px 15px 15px 15px;/*! left: 1075px; */right: 175px;">Editar perfil</a>-->
-
 {% endblock %}
+{% block perfil %}{% url 'home:estudiant:editar_perfil' user.id %}{% endblock %}
 {% block content %}
     <div class="container col-12 mx-auto" align="center">
 

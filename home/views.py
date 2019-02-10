@@ -4,9 +4,12 @@ from company.models import Company
 from student.models import Student
 from django.contrib.auth.models import User
 from django.urls import reverse
+from django.contrib import messages
+
 
 
 def index(request):
+    messages.add_message(request, messages.INFO, 'Hello world.')
     # Si l'usuari esta autenticat entrara.
     if request.user.is_authenticated:
         # Seguidament agafara l'usuari a traves del request.user

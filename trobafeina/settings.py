@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'trobafeina.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
-
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -92,13 +92,13 @@ DATABASES = {
         'NAME': 'trobafeina',
         'USER': 'trobafeina',
         'PASSWORD': '3nAK8ffT',
-        'HOST': 'hl158.dinaserver.com',
+        'HOST': 'hl73.dinaserver.com',
         'PORT': '3306',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
         }
     }
-}"""
+}
 
 
 # Password validation
@@ -133,6 +133,7 @@ USE_L10N = True
 
 USE_TZ = True
 
+MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/

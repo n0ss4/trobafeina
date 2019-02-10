@@ -3,9 +3,52 @@
     <h2 class="text-uppercase" style="position: absolute;z-index: 1;padding: 20px 15px 15px 15px;">Crea una nova oferta</h2>
 {% endblock %}
 {% block content %}
-<form method="post" action="">
-    {% csrf_token %}<!--Contra la falsificacion de peticions-->
-{{ el_form_crearoferta.as_p }}
-<input type="submit" value="Registrame">
-</form>
+<div class="container col-12 my-auto">
+    <form method="post" action="">
+    {% csrf_token %}
+        <div class="row col-12">
+            <div class="col-md-6 col-12">
+                <div class="form-label-group">
+                    <label for="id_nom_oferta">Nom oferta:</label>
+                    <input class="form-control" type="text" name="nom_oferta" required="" id="id_nom_oferta" maxlength="100">
+                </div>
+                <div class="form-label-group">
+                    <label for="id_poblacio">Població:</label>
+                    <input class="form-control" type="text" name="poblacio" required="" id="id_poblacio" maxlength="100">
+                </div>
+                <div class="form-label-group">
+                    <label for="id_telefon">Telefon:</label>
+                    <input class="form-control" type="text" name="telefon" required="" id="id_telefon" maxlength="100">
+                </div>
+                <div class="form-label-group">
+                    <label for="id_lloc_treball_sofereix">Lloc de treball que s'ofereix:</label>
+                    <input class="form-control" type="text" name="lloc_treball_sofereix" required="" id="id_lloc_treball_sofereix" maxlength="500">
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="form-label-group">
+                    <label for="id_horari">Horari:</label>
+                    <input class="form-control" type="text" name="horari" required="" id="id_horari" maxlength="100">
+                </div>
+                <div class="form-label-group">
+                   <label for="id_caracteristiques">Caracteristiques del treball a realitzar:</label>
+                    <input class="form-control" type="text" name="caracteristiques" required="" id="id_caracteristiques" maxlength="900">
+                </div>
+                <div class="form-label-group">
+                    <label for="id_numero_vacants">Numero de vacants:</label>
+                    <input class="form-control" type="text" name="numero_vacants" required="" id="id_numero_vacants" maxlength="100">
+                </div>
+                <div class="form-label-group">
+                    <label for="id_salari">Salari:</label>
+                    <input class="form-control" type="text" name="salari" required="" id="id_salari" maxlength="100">
+                </div>
+            </div>
+        </div>
+        <div class="row col-12">
+            <div class="col-md-2 col-12">
+                <button class="btn btn-success mt-4 w-100">Guardar</button>
+            </div>
+        </div>
+    </form>
+</div>
 {% endblock %}
