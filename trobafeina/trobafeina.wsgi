@@ -23,7 +23,7 @@ sys.path.insert(0,'$HOME/venv/lib/python2.7/site-packages/django')
 sys.path.insert(0,'$HOME/venv/lib/python2.7/site-packages')
 
 # Add the app's directory to the PYTHONPATH
-sys.path.append('/home/trobafeina/trobafeina/trobafeina')
+sys.path.append('/home/trobafeina/trobafeina')
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'settings.py'
 
