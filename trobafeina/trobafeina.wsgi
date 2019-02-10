@@ -25,7 +25,7 @@ sys.path.insert(0,'$HOME/venv/lib/python2.7/site-packages')
 # Add the app's directory to the PYTHONPATH
 sys.path.append('/home/trobafeina/trobafeina/trobafeina')
 
-os.environ['DJANGO_SETTINGS_MODULE'] = 'trobafeina.settings'
+os.environ['DJANGO_SETTINGS_MODULE'] = 'settings.py'
 
 # Activate your virtual env
 activate_env=os.path.expanduser("/home/trobafeina/venv/bin/activate_this.py")
