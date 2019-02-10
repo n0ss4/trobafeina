@@ -25,7 +25,7 @@ SECRET_KEY = '#owmo(0rg+*lra=5ry2wnfeh0a(4qwlm7dqfm53gm69ztr3g8k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
