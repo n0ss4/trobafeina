@@ -97,6 +97,7 @@ def editar_perfil(request,id_user):
             return HttpResponseRedirect(reverse('home:estudiant:index_student', ))
     context = {
         "editar_perfil": form,
+        "estudiant":estudiant
     }
     return render(request,'student/editar_perfil_estudiant.html',context)
 

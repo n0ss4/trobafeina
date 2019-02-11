@@ -111,11 +111,13 @@ def editar_perfil(request,id_user):
             return HttpResponseRedirect(reverse('home:empresa:index_empresa', ))
     context = {
         "editar_perfil": form,
+        "empresa": empresa
     }
     return render(request,'company/editar_perfil_empresa.html',context)
 @login_required
 def info_perfil_estudiant(request, id_student):
-    estudiant=Student.objects.get(id=id_student)
+    s = int(id_student)-1;
+    estudiant=Student.objects.get(id=s)
     context = {
         "estudiant": estudiant,
     }

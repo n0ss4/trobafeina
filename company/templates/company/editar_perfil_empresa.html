@@ -10,12 +10,12 @@
 {% csrf_token %}
     <div class="col-12 row">
         <div class="col-lg-6 col-12">
-            <div class="form-label-group"><label for="id_sector">Sector:</label> <input class="form-control" type="text" name="sector" value="adsasdsadas" required="" id="id_sector" maxlength="500"></div>
-            <div class="form-label-group"><label class="mt-2" for="id_nomResponsable">Nom del responsable:</label> <input class="form-control" type="text" name="nomResponsable" value="asdasdas" required="" id="id_nomResponsable" maxlength="500"></div>
-            <div class="form-label-group"><label class="mt-2" for="id_cognomResponsable">Cognom del responsable:</label> <input class="form-control" type="text" name="cognomResponsable" value="sadasdas" required="" id="id_cognomResponsable" maxlength="500"></div>
+            <div class="form-label-group"><label for="id_sector">Sector:</label> <input class="form-control" type="text" name="sector" value="{{ empresa.sector }}" required="" id="id_sector" maxlength="500"></div>
+            <div class="form-label-group"><label class="mt-2" for="id_nomResponsable">Nom del responsable:</label> <input class="form-control" type="text" name="nomResponsable" value="{{ empresa.nomResponsable }}" required="" id="id_nomResponsable" maxlength="500"></div>
+            <div class="form-label-group"><label class="mt-2" for="id_cognomResponsable">Cognom del responsable:</label> <input class="form-control" type="text" name="cognomResponsable" value="{{ empresa.cognomResponsable }}" required="" id="id_cognomResponsable" maxlength="500"></div>
         </div>
         <div class="col-lg-6 col-12">
-            <div class="form-label-group"><label class="mt-2" for="id_descripcio">Descripció:</label> <textarea style="height: 25vh;" class="form-control" name="descripcio" id="id_descripcio" required="" rows="10" cols="40" maxlength="500">sadasdas</textarea></div>
+            <div class="form-label-group"><label class="mt-2" for="id_descripcio">Descripció:</label> <textarea style="height: 25vh;" class="form-control" name="descripcio" id="id_descripcio" required="" rows="10" cols="40" maxlength="500">{{ empresa.descripcio }}</textarea></div>
         </div>
     </div>
     <div class="col-12 row mt-4">
