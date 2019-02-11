@@ -133,7 +133,8 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static")
+    os.path.join(BASE_DIR, "static"),
+    '/home/trobafeina/trobafeina/static/',
 ]
 
 LOGIN_REDIRECT_URL = '/'
