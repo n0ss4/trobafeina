@@ -139,9 +139,5 @@ STATICFILES_DIRS = [
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-SOUTH_MIGRATION_MODULES = {
-'django_simple_cookie_consent': 'django_simple_cookie_consent.south_migrations.0001_initial.py',
-}
-
 #LOGIN_REDIRECT_URL='/'
 #AUTH_USER_MODEL = 'student.Student'
