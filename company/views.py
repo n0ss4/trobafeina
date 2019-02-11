@@ -114,7 +114,7 @@ def editar_perfil(request,id_user):
     }
     return render(request,'company/editar_perfil_empresa.html',context)
 @login_required
-def info_perfil_estudiant(request,id_student):
+def info_perfil_estudiant(request, id_student):
     estudiant=Student.objects.get(id=id_student)
     context = {
         "estudiant": estudiant,

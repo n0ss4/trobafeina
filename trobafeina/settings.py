@@ -127,7 +127,7 @@ USE_TZ = True
 
 #MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
 
-SECURE_SSL_REDIRECT = 'True'
+#SECURE_SSL_REDIRECT = 'True'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
