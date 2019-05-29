@@ -1,8 +1,6 @@
-# Mini project
+# Trobafeina
 
-## Job exchange
-
-The job exchange create for Websalpunt and Dinahosting. :D
+El panel de trabajo para tu universidad o colegio.
 
 ``by davidam and n0ss4
 ``
